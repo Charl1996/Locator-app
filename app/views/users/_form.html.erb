@@ -1,0 +1,6 @@
+<%= form_with(model: user) do |form| %>
+
+  <p> Name: <%= form.text_field :name %> </p>
+  <p> Email: <%= form.text_field :email %> </p>
+  <p> <%= form.submit "Create" %> </p>
+<% end %>

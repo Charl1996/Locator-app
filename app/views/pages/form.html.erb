@@ -1,0 +1,12 @@
+<h1>Location form</h1>
+ <div> 
+  <%= form_with :url => { :controller => "incomming", :action => "form_submit" }, html: {method: :post}  do |f| %>
+    <p> Email: <%= f.text_field :email %> </p>
+    <p> Location: <%= f.text_field :location %> </p>
+
+
+    <%= submit_tag "Submit" %>
+  <% end %>
+
+  <p> <%= link_to "Add new user", "/users/new" %> </p>
+</div>
