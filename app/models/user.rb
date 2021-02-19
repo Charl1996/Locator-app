@@ -3,9 +3,19 @@ class User < ApplicationRecord
 
   def update_current_location(location_info)
     self.locations.create(
+      name: location_info[:name], 
       lon: location_info[:location][:lon],
-      lon: location_info[:location][:lon],
-      reported_at: DateTime.now
+      lat: location_info[:location][:lat],
+      reported_at: location_info[:timestamp]
     )
   end
+
+  def get_last_location()
+    location = self.locations.last
+    {
+      name: location.name,
+      timestamp: location.reported_at
+    }
+  end
+
 end

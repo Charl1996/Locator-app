@@ -1,4 +1,4 @@
-module GeonamesHelper
+module GeonamesApiHelper
 
   def self.get_lon_lat(location_name)
     response = self.get_location_info(location_name)
@@ -13,9 +13,12 @@ module GeonamesHelper
   private
 
   def self.extract_lon_lat(response)
+    guessed_response = response["geonames"].first
+    
     {
-      lon: response["geonames"].first["lng"],
-      lat: response["geonames"].first["lat"]
+      name: guessed_response["name"],
+      lon: guessed_response["lng"],
+      lat: guessed_response["lat"]
     }
   end
 

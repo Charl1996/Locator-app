@@ -1,0 +1,10 @@
+<h1>Track user</h1>
+ <div> 
+  <%= form_with :url => { :controller => "users", :action => "find_user_location" }, html: {method: :get}  do |f| %>
+    <p> User email: <%= f.text_field :email %> </p>
+
+    <%= submit_tag "Submit" %>
+  <% end %>
+</div>
+
+<p> <%= link_to "Home", controller: "pages", action: "form" %> </p>

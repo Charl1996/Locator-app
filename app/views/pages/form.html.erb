@@ -7,6 +7,7 @@
 
     <%= submit_tag "Submit" %>
   <% end %>
-
-  <p> <%= link_to "Add new user", "/users/new" %> </p>
 </div>
+
+  <p> <%= link_to "Add new user", controller: "pages", action: "register_new_user" %> </p>
+  <p> <%= link_to "Track user", controller: "pages", action: "track_user" %> </p>
